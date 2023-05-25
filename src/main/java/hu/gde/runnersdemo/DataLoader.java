@@ -34,6 +34,13 @@ public class DataLoader implements CommandLineRunner {
         runnerEntity.getLaptimes().add(laptime1);
         runnerEntity.getLaptimes().add(laptime2);
 
+        //Sponsor entity
+        SponsorEntity sponsorName1 = new SponsorEntity();
+        sponsorName1.setSponsorName("RedBull");
+        sponsorName1.setRunner(runnerEntity);
+
+        runnerEntity.getSponsorName().add(sponsorName1);
+
         runnerRepository.save(runnerEntity);
 
         RunnerEntity runnerEntity2 = new RunnerEntity();
@@ -54,12 +61,24 @@ public class DataLoader implements CommandLineRunner {
         runnerEntity2.getLaptimes().add(laptime3);
         runnerEntity2.getLaptimes().add(laptime4);
 
+        SponsorEntity sponsorName2 = new SponsorEntity();
+        sponsorName2.setSponsorName("Monster energy");
+        sponsorName2.setRunner(runnerEntity2);
+
+        runnerEntity2.getSponsorName().add(sponsorName2);
+
         runnerRepository.save(runnerEntity2);
 
         RunnerEntity runnerEntity3 = new RunnerEntity();
         runnerEntity3.setRunnerName("Ádám");
         runnerEntity3.setAveragePace(100);
         runnerEntity3.setHeight(196);
+
+        SponsorEntity sponsorName3 = new SponsorEntity();
+        sponsorName3.setSponsorName("Samsung");
+        sponsorName3.setRunner(runnerEntity3);
+
+        runnerEntity3.getSponsorName().add(sponsorName3);
 
         runnerRepository.save(runnerEntity3);
     }
